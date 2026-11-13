@@ -35,3 +35,53 @@ body { margin: 0; background: #f6f8fb; color: #1f2937; }
 .error-text { color: #b42318; }
 .status-legend { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 10px; font-size: 12px; color: var(--muted); }
 .legend-item { background: #eef2f7; border-radius: 999px; padding: 2px 10px; }
+
+/* 三签封包 */
+.role-hint { font-size: 12px; color: var(--muted); margin: 0 0 10px; }
+.role-select { margin-left: 4px; padding: 2px 6px; border: 1px solid var(--border); border-radius: 6px; background: #fff; }
+.badge { display: inline-block; border-radius: 999px; padding: 1px 8px; font-size: 12px; margin-right: 4px; }
+.badge.green { background: #e7f6ec; color: #137333; }
+.badge.amber { background: #fdf3e0; color: #9a6a00; }
+.badge.gray { background: #eef2f7; color: #64748b; }
+.badge.blue { background: #e8f0fe; color: #1f6feb; }
+.badge.red { background: #fdecea; color: #b42318; }
+.badge.readonly { background: #f8fafc; color: #475569; border: 1px dashed #94a3b8; }
+.seal-cell { white-space: nowrap; }
+.seal-dot { display: inline-block; min-width: 34px; text-align: center; border-radius: 6px; padding: 2px 6px; font-size: 12px; border: 1px solid var(--border); color: #94a3b8; background: #f8fafc; margin-right: 4px; }
+.seal-dot.stamped { background: #e7f6ec; color: #137333; border-color: #bfe6cc; }
+.seal-dot.frozen { background: #fdecea; color: #b42318; border-color: #f5c6c0; }
+.detail-panel { margin-top: 14px; background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }
+.detail-panel h3 { margin: 0; font-size: 15px; }
+.detail-panel h4 { margin: 14px 0 8px; font-size: 13px; }
+.panel-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.panel-desc { font-size: 12px; color: var(--muted); margin: 4px 0; }
+.info-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px 16px; font-size: 13px; margin: 10px 0; }
+.info-grid span { display: block; color: var(--muted); font-size: 12px; }
+.seal-grid { display: flex; gap: 12px; flex-wrap: wrap; }
+.seal-card { flex: 1; min-width: 240px; border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; }
+.seal-card.frozen { border-color: #f5c6c0; background: #fff7f6; }
+.seal-card h4 { margin: 0 0 6px; font-size: 13px; }
+.seal-card h4 small { color: var(--muted); font-weight: normal; margin-left: 6px; }
+.seal-state { font-size: 12px; color: var(--muted); margin: 4px 0; }
+.seal-state em { display: block; font-style: normal; color: #94a3b8; }
+.freeze-line { font-size: 12px; color: #b42318; margin: 4px 0; }
+.field-row { display: flex; gap: 8px; margin-top: 8px; align-items: center; }
+.field-row input { flex: 1; padding: 6px 8px; border: 1px solid var(--border); border-radius: 6px; }
+.batch-input { width: 90px; padding: 4px 8px; border: 1px solid var(--border); border-radius: 6px; }
+.package-view dl { display: grid; grid-template-columns: 120px 1fr; row-gap: 4px; font-size: 13px; margin: 8px 0; }
+.package-view dt { color: var(--muted); }
+.package-view dd { margin: 0; }
+.package-head { display: flex; gap: 8px; align-items: center; margin: 8px 0 4px; }
+.seal-list { list-style: none; padding: 0; margin: 8px 0; font-size: 13px; }
+.seal-list li { display: flex; gap: 10px; padding: 4px 0; border-bottom: 1px dashed var(--border); }
+.seal-name { min-width: 80px; color: var(--muted); }
+.seal-payload { flex: 1; }
+.seal-meta { color: #94a3b8; font-size: 12px; }
+.report-list { font-size: 12px; line-height: 1.9; padding-left: 18px; }
+.notice-text { color: #137333; }
+.fetch-panel { margin-top: 14px; background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }
+.fetch-panel h3 { margin: 0 0 6px; font-size: 15px; }
+.fetch-bar { display: flex; gap: 8px; margin: 8px 0; }
+.fetch-bar input { flex: 1; max-width: 360px; padding: 6px 8px; border: 1px solid var(--border); border-radius: 6px; }
+.fetch-message { font-size: 12px; margin: 6px 0; }
+.threshold-note { font-size: 12px; color: #9a6a00; background: #fdf3e0; border-radius: 6px; padding: 6px 10px; margin: 8px 0 0; }

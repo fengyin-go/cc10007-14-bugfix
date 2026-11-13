@@ -67,6 +67,8 @@
       <span>共 {{ total }} 条转换编排记录</span>
       <span v-if="errorMessage" class="error-text">{{ errorMessage }}</span>
     </footer>
+
+    <PackageFetchPanel consumer="transform" />
   </section>
 </template>
 
@@ -79,6 +81,7 @@ import {
   moduleMeta,
   runAction as applyAction,
 } from '@/api/local-service'
+import PackageFetchPanel from '@/components/PackageFetchPanel.vue'
 import type { EntryRow } from '@/data/types'
 
 const meta = moduleMeta('transform')

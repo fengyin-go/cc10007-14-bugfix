@@ -11,7 +11,12 @@
     <main class="app-main">
       <header class="app-head">
         <span class="head-desc">离线版数仓分层建模工具，覆盖贴源层、明细层、汇总层、应用层的表结构设计、分区策略配置、质量规则编排与血缘关系管理，数据持久化到浏览器本地存储。</span>
-        <span class="head-user">当前值班：{{ store.operator }} · {{ store.shiftLabel }}</span>
+        <span class="head-user">
+          当前值班：{{ store.operator }} · {{ store.shiftLabel }} · 角色
+          <select class="role-select" :value="store.role" @change="onRoleChange">
+            <option v-for="key in roleKeys" :key="key" :value="key">{{ roleLabels[key] }}</option>
+          </select>
+        </span>
       </header>
       <RouterView />
     </main>
@@ -19,9 +24,17 @@
 </template>
 
 <script setup lang="ts">
+import { ROLE_KEYS, ROLE_LABELS } from '@/data/cleanse-types'
+import type { RoleKey } from '@/data/cleanse-types'
 import { useSessionStore } from '@/stores/session'
 
 const store = useSessionStore()
+const roleKeys = ROLE_KEYS
+const roleLabels = ROLE_LABELS
+
+function onRoleChange(event: Event) {
+  store.setRole((event.target as HTMLSelectElement).value as RoleKey)
+}
 
 const navItems = [{ label: "运营概览", path: "/" }, { label: "贴源层建模", path: "/ods" }, { label: "明细层建模", path: "/dwd" }, { label: "汇总层建模", path: "/dws" }, { label: "应用层发布", path: "/ads" }, { label: "数据源管理", path: "/source" }, { label: "分区策略", path: "/partition" }, { label: "清洗加工", path: "/cleanse" }, { label: "转换编排", path: "/transform" }, { label: "质量校验", path: "/quality" }, { label: "血缘追踪", path: "/lineage" }, { label: "历史补数", path: "/backfill" }, { label: "元数据管理", path: "/schema" }, { label: "数据同步", path: "/datasync" }, { label: "快照管理", path: "/snapshot" }, { label: "存储治理", path: "/govern" }, { label: "任务监控", path: "/monitor" }, { label: "变更审计", path: "/audit" }, { label: "编目检索", path: "/catalog" }]
 </script>
